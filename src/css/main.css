@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+
+@layer base {
+  * {
+    @apply outline-inherit;
+  }
+  body {
+    @apply font-m-plus-1 text-sm leading-5 tracking-wider;
+  }
+  section {
+    @apply h-screen;
+  }
+}
+
+@layer components {
+  .header-nav__left,
+  .header-nav__right {
+    @apply py-[6px] px-4 rounded-2xl hover:bg-stone-400/25 whitespace-nowrap font-medium text-stone-900 outline-offset-2 text-sm focus-within:ring-2 focus-within:ring-stone-400 transition-all duration-500 ease-in-out;
+  }
+  .header-nav__left a,
+  .header-nav__right a {
+    @apply focus:ring-0 focus:outline-none;
+  }
+  .section-title {
+    @apply text-4xl font-bold tracking-wider leading-tight;
+  }
+  .section-copy {
+    @apply text-sm leading-tight mb-auto;
+  }
+  .section-cta {
+    @apply inline-block py-3 max-w-[280px] w-full rounded-full uppercase text-xs;
+  }
+  aside {
+    @apply flex flex-col items-center justify-center bg-white fixed -right-full transition-all duration-1000 top-0 w-[272px] h-full z-30 m-0;
+  }
+  .aside-close {
+    @apply cursor-pointer flex justify-center items-center right-6 top-6 absolute bg-zinc-200 w-10 h-10 z-10 text-3xl py-1 px-3 rounded-full;
+  }
+  .aside-nav {
+    @apply flex flex-col items-start justify-start w-full overflow-y-auto py-16;
+  }
+  .aside-nav__items {
+    @apply py-2 px-10 rounded-full focus-visible:outline-2 focus-visible:outline focus-visible:outline-zinc-800 text-zinc-900 font-semibold;
+  }
+  .backdrop {
+    @apply fixed inset-0 bg-black opacity-50 z-20;
+  }
+}
